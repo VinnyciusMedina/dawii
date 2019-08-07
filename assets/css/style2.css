@@ -1,0 +1,15 @@
+.footer {
+			bottom:0;
+			width:100%;
+			background-color: red;
+			color: white;
+			text-align: center;
+}
+iframe{
+	margin-left: 25%;
+	margin-bottom: 50px;
+}
+form{
+	text-align: center;
+	margin-bottom: 500px;
+}
