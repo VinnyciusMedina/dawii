@@ -1,19 +1,3 @@
-<?php
-	require_once 'banco.php';
-	
-	session_start();
-	
-	if(isset($_POST['logar'])):
-		$erros = array();
-		$email = mysqli_escape_string($cont, $_POST['email']);
-		$senha = mysqli_escape_string($cont, $_POST['senha']);
-		
-		if(empty($email) or empty($senha)):
-			$erros[] = "Os campos login/senha precisam ser preenchidos</li>"
-		endif;
-	endif;
-
-?>
 <html>
 	<head>
 		<title>Internacional</title>
@@ -62,7 +46,6 @@
 				border-radius:10px;
 				width:300px;
 				height:34px;
-				margin-left:25%;
 			}
  
 			#txtBusca{
@@ -86,20 +69,19 @@
 			}
 	
 			#divBusca img{
-				
 				float:left;
 				width: 30px;
 			}
 			#imgtopo{
-				background:url('http://tedesco.com.br/wp-content/uploads/2017/08/Beira-Rio-01.jpg');
-				height: 600px;
+				background:url('http://www.arquibancadacolorada.com.br/blog/wp-content/uploads/2018/10/daLESSANDRO-1.jpg');
+				height: 800px;
 				background-repeat: no repeat;
 				background-size: 100%;
 				margin-top: 0;
 				position: initial;
 			}
 			#conteudo{
-				height: 400px;
+				height: 2500px;
 				width: 100%px;
 				background-color: #FA5858;
 				margin: 0;
@@ -109,27 +91,12 @@
 				background-color: white;
 				margin-left: 15%;
 				margin-right: 15%;
-				height: 400px;
+				height: 2500px;
 				margin-top: 0px;
 				position: initial;
-				text-align: center;
-				
-			}
-			#noticias2{
-				background-color: white;
-				margin-left: 15%;
-				margin-right: 15%;
-				height: 2320px;
-				margin-top: 0px;
-				position: initial;
-				text-align: center;
 				
 			}
 			#noticias img{
-				width: 500px;
-				margin-top: 50px;
-			}
-			#noticias2 img{
 				width: 500px;
 				margin-top: 50px;
 			}
@@ -155,7 +122,7 @@
 				width: 100%;
 			}
 			#conteudo2{
-				height: 2320px;
+				height: 1320px;
 				width: 100%px;
 				background-color: #FA5858;
 				margin: 0;
@@ -165,7 +132,7 @@
 				background-color: white;
 				margin-left: 15%;
 				margin-right: 15%;
-				height: 2320px;
+				height: 1320px;
 				margin-top: 0px;
 				position: initial;
 				}
@@ -192,30 +159,12 @@
 				text-align: center;
 				height: 100px;
 				}
-				table{
-					width: 50px;
-					text-align: center;
-					margin-left: 15%;
-					background-color: grey;
-				}
-				td a{
-					margin-left: 21%;
-				}
-				input{
-					margin-top: 100px;
-				}
-				form{
-					padding: 0;
-					margin-left: 25%;
-					height: 100px;
-					width: 500px;
-					text-align: center;
-				}
-				label{
-					color: red;
-					margin-top: 300px;
-				}
-				
+			td {
+				text-align: center;
+			}
+			table{
+				margin-left: 200px;
+			}
 		</style>
 	</head>
 	<body>
@@ -235,21 +184,129 @@
 		</section>
 		<section id="conteudo">
 			<div id="noticias">
-				<?php
-					if(!empty($erros)):
-						foreach($erros as $erro):
-							echo $erro;
-						endforeach;
-					endif;
-				?>
-					<form>
-						<label>Email</label>
-						<input type="email" name="email">
-						<label>Senha</label>
-						<input type="password" name="senha">
-						<input type="submit" name ="logar" style="color: white; background-color: red;" value="enviar">
-					</form>
-										
+					<a href="titulos.php">Títulos</a>
+					<table border="0">
+						<tr>
+							<td rowspan="3">
+								<img style="width: 200px;" src="https://tmssl.akamaized.net//images/erfolge/verybigquad/318.png?lm=1520606999">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<h1>Mundial</h1>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>2006</p>
+							</td>
+						</tr>
+					</table>
+					<table border="0">
+						<tr>
+							<td rowspan="3">
+								<img style="width: 200px;" src="https://www.santosfc.com.br/wp-content/uploads/2017/08/20170321_santos_trofeus_PEGX1598-Libertadores_2011.png">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<h1>Libertadores</h1>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>2006 e 2010</p>
+							</td>
+						</tr>
+					</table>
+					<table border="0">
+						<tr>
+							<td rowspan="3">
+								<img style="width: 200px;" src="https://www.cruzeiro.com.br/ckfinder/userfiles/images/Conquistas/Brasileir%C3%A3o-2014.png">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<h1>Campeonato brasileiro</h1>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>1975, 1976 e 1979</p>
+							</td>
+						</tr>
+					</table>
+					<table border="0">
+						<tr>
+							<td rowspan="3">
+								<img style="width: 200px;" src="https://www.cruzeiro.com.br/ckfinder/userfiles/images/Conquistas/Copa-do-Brasil-2017.png">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<h1>Copa do Brasil</h1>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>1992</p>
+							</td>
+						</tr>
+					</table>
+					<table border="0">
+						<tr>
+							<td rowspan="3">
+								<img style="width: 200px;" src="http://cam-prerender-webbucket-pzcfv18ydr3s.s3-website-us-east-1.amazonaws.com/uploads/2019/02/01134722/2014-Recopa-Sulamericana.png">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<h1>Recopa Sulamericana</h1>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>2007 e 2011</p>
+							</td>
+						</tr>
+					</table>
+					<table border="0">
+						<tr>
+							<td rowspan="3">
+								<img style="width: 200px;" src="https://3.bp.blogspot.com/-Ld_e7G0VtWs/VxqunLhCbNI/AAAAAAAAQEw/Fqdl9t45XfEvnAM7_5TKp7ThaNe_rkz2QCLcB/s1600/copa%2Bsudamericana.png">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<h1>Copa Sulamericana</h1>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>2008</p>
+							</td>
+						</tr>
+					</table>
+					<table border="0">
+						<tr>
+							<td rowspan="3">
+								<img style="width: 200px;" src="https://www.gremiopedia.com/images/thumb/c/c0/Campeonato_Ga%C3%BAcho_de_2010.png/200px-Campeonato_Ga%C3%BAcho_de_2010.png">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<h1 style="text-align: left">Campeonato gaucho</h1>
+							</td>
+						</tr>
+						<tr>
+							<td style="text-align: left">
+								<p>	1927, 1934, 1940 a 1945, 1947, 1948, 1950 a 1953, 1955, 1961, 1969 a 1976, 1978, 1981 a 1984, 1991, 1992, 1994, 1997, 2002 a 2005, 2008, 2009, 2011 a 2016</p>
+							</td>
+						</tr>
+					</table>
+		
+					
+					
 			</div>
 			
 		</section>
@@ -257,8 +314,16 @@
 				<img class="mySlides" src="https://a3.espncdn.com/combiner/i?img=%2Fphoto%2F2017%2F1206%2Fr299193_1296x518_5-2.jpg&w=768&h=307&scale=crop&cquality=80&location=origin&format=jpg">
 				<img class="mySlides" src="https://a1.espncdn.com/combiner/i?img=%2Fphoto%2F2019%2F0824%2Fr587824_1296x518_5-2.jpg&w=768&h=307&scale=crop&cquality=80&location=origin&format=jpg">
 				<img class="mySlides" src="https://a1.espncdn.com/combiner/i?img=%2Fphoto%2F2019%2F0822%2Fr587065_1296x518_5%2D2.jpg&w=768&h=307&scale=crop&cquality=80&location=origin&format=jpg">
-				
 			</div>
+		<section id="conteudo2">
+			<div id="videos">
+				<a href="noticias.html" style="margin-bottom: 20px;">Vídeos</a>
+				<iframe width="100%" height="405" src="https://www.youtube.com/embed/zOLo-Nlpq8E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<iframe width="100%" height="405" src="https://www.youtube.com/embed/--nwR2LiVPc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" style="margin-top: 20px;" allowfullscreen></iframe>
+				<iframe width="100%" height="405" src="https://www.youtube.com/embed/IdlcJVeWcLg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" style="margin-top: 20px; margin-bottom:30px" allowfullscreen></iframe>
+			</div>
+			
+		</section>
 		<section id="conteudo3">
 			<div id="Login">
 				<a href="login" style="margin-bottom:20px;">Login</a>
@@ -266,8 +331,7 @@
 				<form>
 					Nome<input type="text" name="nome">
 					email<input type="email" name="email">
-					<label for="msg">Mensagem:</label>
-					<textarea id="msg"></textarea>
+					mensagem<input type="text" name="mensagem" style="height:150px;">
 				</form>
 			</div>
 		</section>

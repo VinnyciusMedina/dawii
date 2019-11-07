@@ -178,6 +178,7 @@
 			<li><a href="imagens.php">Imagens</a></li>
 			<li><a href="vide.php">Vídeos</a></li>
 			<li><a href="ingressos.php">Ingressos</a></li>
+			<li><a href="titulos.php">Titulos</a></li>
 			<li><a href="associar.php">Associar</a></li>
 			<li><a href="login.php">Login</a></li>
 		</ul>
@@ -233,9 +234,9 @@ Como o Inter se prepara para fazer "jogo da vida" contra o Flamengo</h2>
 				</form>
 			</div>
 		</section>
-		<div class="footer">
+		<footer class="footer">
 			<p>@Vinnycius Medina</p>
-		</div>
+		</footer>
 			<script>
 			var myIndex = 0;
 				carousel();

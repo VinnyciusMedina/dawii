@@ -169,6 +169,7 @@
 			<li><a href="imagens.php">Imagens</a></li>
 			<li><a href="vide.php">Vídeos</a></li>
 			<li><a href="ingressos.php">Ingressos</a></li>
+			<li><a href="titulos.php">Titulos</a></li>
 			<li><a href="associar.php">Associar</a></li>
 			<li><a href="login.php">Login</a></li>
 		</ul>
@@ -192,7 +193,7 @@
 			</div>
 			
 		</section>
-		<div id="slides">
+		<div align="center" id="slides">
 				<img class="mySlides" src="https://a3.espncdn.com/combiner/i?img=%2Fphoto%2F2017%2F1206%2Fr299193_1296x518_5-2.jpg&w=768&h=307&scale=crop&cquality=80&location=origin&format=jpg">
 				<img class="mySlides" src="https://a1.espncdn.com/combiner/i?img=%2Fphoto%2F2019%2F0824%2Fr587824_1296x518_5-2.jpg&w=768&h=307&scale=crop&cquality=80&location=origin&format=jpg">
 				<img class="mySlides" src="https://a1.espncdn.com/combiner/i?img=%2Fphoto%2F2019%2F0822%2Fr587065_1296x518_5%2D2.jpg&w=768&h=307&scale=crop&cquality=80&location=origin&format=jpg">
@@ -201,7 +202,7 @@
 			<div id="videos">
 				<a href="noticias.html" style="margin-bottom: 20px;">Vídeos</a>
 				<iframe width="100%" height="405" src="https://www.youtube.com/embed/zOLo-Nlpq8E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-				<iframe width="100%" height="405" src="https://www.youtube.com/embed/--nwR2LiVPc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" style="margin-top: 20px;" allowfullscreen></iframe>
+				<iframe width="100%" height="405" src="https://www.youtube.com/embed/eNsNNJiIlzM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 				<iframe width="100%" height="405" src="https://www.youtube.com/embed/IdlcJVeWcLg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" style="margin-top: 20px; margin-bottom:30px" allowfullscreen></iframe>
 			</div>
 			
@@ -217,9 +218,9 @@
 				</form>
 			</div>
 		</section>
-		<div class="footer">
+		<footer class="footer">
 			<p>@Vinnycius Medina</p>
-		</div>
+		</footer>
 			<script>
 			var myIndex = 0;
 				carousel();

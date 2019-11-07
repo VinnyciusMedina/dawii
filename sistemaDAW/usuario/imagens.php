@@ -184,6 +184,7 @@
 			<li><a href="imagens.php">Imagens</a></li>
 			<li><a href="vide.php">Vídeos</a></li>
 			<li><a href="ingressos.php">Ingressos</a></li>
+			<li><a href="titulos.php">Titulos</a></li>
 			<li><a href="associar.php">Associar</a></li>
 			<li><a href="login.php">Login</a></li>
 		</ul>
