@@ -1,19 +1,7 @@
 <?php
-	require_once 'banco.php';
-	
-	session_start();
-	
-	if(isset($_POST['logar'])):
-		$erros = array();
-		$email = mysqli_escape_string($cont, $_POST['email']);
-		$senha = mysqli_escape_string($cont, $_POST['senha']);
-		
-		if(empty($email) or empty($senha)):
-			$erros[] = "Os campos login/senha precisam ser preenchidos</li>"
-		endif;
-	endif;
-
+session_start();
 ?>
+
 <html>
 	<head>
 		<title>Internacional</title>
@@ -235,14 +223,17 @@
 		</section>
 		<section id="conteudo">
 			<div id="noticias">
-				<?php
-					if(!empty($erros)):
-						foreach($erros as $erro):
-							echo $erro;
-						endforeach;
-					endif;
-				?>
-					<form>
+				 <?php
+                    if(isset($_SESSION['nao_autenticado'])):
+                    ?>
+                    <div class="notification is-danger">
+                      <p>ERRO: Usuário ou senha inválidos.</p>
+                    </div>
+                    <?php
+                    endif;
+                    unset($_SESSION['nao_autenticado']);
+                    ?>
+					<form action="login2.php" method="post">
 						<label>Email</label>
 						<input type="email" name="email">
 						<label>Senha</label>
@@ -261,7 +252,6 @@
 			</div>
 		<section id="conteudo3">
 			<div id="Login">
-				<a href="login" style="margin-bottom:20px;">Login</a>
 				<h1 style="color:red">Fale conosco</h1>
 				<form>
 					Nome<input type="text" name="nome">
