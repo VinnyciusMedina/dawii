@@ -24,14 +24,36 @@
                 $nomedoisErro = null;
                 $imagemumErro = null;
                 $imagemdoisErro = null;
+                $valorErro = null;
+		
+		$nomeTemporario = $_FILES['imagemum']['tmp_name'];
+		$nomeImagem = $_FILES['imagemum']['name'];
+		$diretorio = 'imagem/'.$nomeImagem;
+		
+		if(move_uploaded_file($nomeTemporario,$diretorio)){
+			echo "imagem enviada";
+		}else{
+			echo "imagem não enviada";
+		}
+		
+		$nomeTemporario2 = $_FILES['imagemdois']['tmp_name2'];
+		$nomeImagem2 = $_FILES['imagemdois']['name'];
+		$diretorio2 = 'imagem/'.$nomeImagem2;
+		
+		if(move_uploaded_file($nomeTemporario2,$diretorio2)){
+			echo "imagem enviada";
+		}else{
+			echo "imagem não enviada";
+		}
 
 		$descricao = $_POST['descricao'];
 		$date = $_POST['data'];
 		$hora = $_POST['hora'];
                 $nomeum = $_POST['nomeum'];
                 $nomedois = $_POST['nomedois'];
-                $imagemum = $_POST['imagemum'];
-                $imagem = $_POST['imagemdois'];
+                $imagemum = $nomeImagem;
+                $imagemdois = $nomeImagem2;
+                $valor = $valor;
 
 		//Validação
 		$validacao = true;
@@ -74,6 +96,11 @@
                     $imagemdoisErro = 'Por favor preenche a segunda imagem!';
                     $validacao = false;
 		}
+				if (empty($valor))
+                {
+                    $valorErro = 'Por favor preenche a segunda imagem!';
+                    $validacao = false;
+		}
 
 		// update data
 		if ($validacao)
@@ -81,9 +108,9 @@
 					echo "asd";
                     $pdo = Banco::conectar();
                     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                    $sql = "UPDATE ingresso  set descricao = ?, data = ?, hora = ?, nomeum = ?, nomedois = ?, imagemum = ?, imagemdois = ? WHERE id = ?";
+                    $sql = "UPDATE ingresso  set descricao = ?, data = ?, hora = ?, nomeum = ?, nomedois = ?, valor = ?, imagemum = ?, imagemdois = ? WHERE id = ?";
                     $q = $pdo->prepare($sql);
-                    $q->execute(array($descricao,$date,$hora,$nomeum,$nomedois,$imagemum,$imagemdois,$id));
+                    $q->execute(array($descricao,$date,$hora,$nomeum,$nomedois,$imagemum,$imagemdois,$id, $valor));
                     Banco::desconectar();
                     header("Location: index.php");
 		}
@@ -95,7 +122,7 @@
 		$sql = "SELECT * FROM ingresso where id = ?";
 		$q = $pdo->prepare($sql);
 		$q->execute(array($id));
-		$data = $q->fetch(PDO::FETCH_ASSOC);
+		$dat = $q->fetch(PDO::FETCH_ASSOC);
 		$descricao = $data['descricao'];
                 $date = $data['data'];
                 $hora = $data['hora'];
@@ -103,6 +130,7 @@
 		$nomedois = $data['nomedois'];
 		$imagemum = $data['imagemum'];
 		$imagemdois = $data['imagemdois'];
+		$valor = $data['valor'];
 		Banco::desconectar();
 	}
 ?>
@@ -112,8 +140,9 @@
 
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="assets/css/style.css">
-				<title>Atualizar Notícia</title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+				<title>Atualizar Ingresso</title>
     </head>
 
     <body>
@@ -122,7 +151,7 @@
             <div class="span10 offset1">
 							<div class="card">
 								<div class="card-header">
-                    <h3 class="well"> Atualizar notícia </h3>
+                    <h3 class="well"> Atualizar ingresso </h3>
                 </div>
 								<div class="card-body">
                 <form class="form-horizontal" action="update.php?id=<?php echo $id?>" method="post">
@@ -190,6 +219,15 @@
                             <input name="imagemdois" class="form-control" size="40" type="text" placeholder="Imagem do time que joga fora" value="<?php echo !empty($imagemdois)?$imagemdois:'';?>">
                             <?php if (!empty($imagemdoisErro)): ?>
                                 <span class="help-inline"><?php echo $imagemdoisErro;?></span>
+                                <?php endif; ?>
+                        </div>
+                    </div>
+					<div class="control-group <?php echo !empty($valor)?'error':'';?>">
+                        <label class="control-label">Valor</label>
+                        <div class="controls">
+                            <input name="valor" class="form-control" size="40" type="number" placeholder="Imagem do time que joga fora" value="<?php echo !empty($valor)?$valor:'';?>">
+                            <?php if (!empty($valorErro)): ?>
+                                <span class="help-inline"><?php echo $valorErro;?></span>
                                 <?php endif; ?>
                         </div>
                     </div>

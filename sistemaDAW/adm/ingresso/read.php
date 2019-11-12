@@ -14,7 +14,7 @@
     {
        $pdo = Banco::conectar();
        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-       $sql = "SELECT * FROM noticia where id = ?";
+       $sql = "SELECT * FROM ingresso where id = ?";
        $q = $pdo->prepare($sql);
        $q->execute(array($id));
        $data = $q->fetch(PDO::FETCH_ASSOC);
@@ -27,8 +27,9 @@
 
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="assets/css/style.css">
-        <title>Informações do Contato</title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <title>Informações do ingresso</title>
     </head>
 
     <body>
@@ -36,21 +37,12 @@
             <div class="span10 offset1">
                   <div class="card">
     								<div class="card-header">
-                    <h3 class="well">Informações do Contato</h3>
+                    <h3 class="well">Informações do ingresso</h3>
                 </div>
                 <div class="container">
                 <div class="form-horizontal">
                     <div class="control-group">
-                        <label class="control-label">Nome</label>
-                        <div class="controls">
-                            <label class="carousel-inner">
-                                <?php echo $data['nome'];?>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="control-group">
-                        <label class="control-label">Descricao</label>
+                        <label class="control-label">Descrição</label>
                         <div class="controls">
                             <label class="carousel-inner">
                                 <?php echo $data['descricao'];?>
@@ -59,28 +51,61 @@
                     </div>
 
                     <div class="control-group">
-                        <label class="control-label">Imagem</label>
-                        <div class="controls">
-                            <label class="carousel-inner">
-                                <?php echo $data['imagem'];?>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="control-group">
                         <label class="control-label">Data</label>
                         <div class="controls">
                             <label class="carousel-inner">
-                                <?php echo $data['date'];?>
+                                <?php echo $data['data'];?>
                             </label>
                         </div>
                     </div>
 
                     <div class="control-group">
-                        <label class="control-label">Autor</label>
+                        <label class="control-label">Hora</label>
                         <div class="controls">
                             <label class="carousel-inner">
-                                <?php echo $data['autor'];?>
+                                <?php echo $data['hora'];?>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label">Primeira time</label>
+                        <div class="controls">
+                            <label class="carousel-inner">
+                                <?php echo $data['nomeum'];?>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label">Segundo time</label>
+                        <div class="controls">
+                            <label class="carousel-inner">
+                                <?php echo $data['nomedois'];?>
+                            </label>
+                        </div>
+                    </div>
+					<div class="control-group">
+                        <label class="control-label">Primeira Imagem</label>
+                        <div class="controls">
+                            <label class="carousel-inner">
+                                <?php echo $data['imagemum'];?>
+                            </label>
+                        </div>
+                    </div>
+					<div class="control-group">
+                        <label class="control-label">Segunda Imagem</label>
+                        <div class="controls">
+                            <label class="carousel-inner">
+                                <?php echo $data['imagemdois'];?>
+                            </label>
+                        </div>
+                    </div>
+					<div class="control-group">
+                        <label class="control-label">Valor</label>
+                        <div class="controls">
+                            <label class="carousel-inner">
+                                <?php echo $data['valor'];?>
                             </label>
                         </div>
                     </div>

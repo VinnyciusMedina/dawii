@@ -46,7 +46,6 @@
 				border-radius:10px;
 				width:300px;
 				height:34px;
-				margin-left:25%;
 			}
  
 			#txtBusca{
@@ -70,20 +69,19 @@
 			}
 	
 			#divBusca img{
-				
 				float:left;
 				width: 30px;
 			}
 			#imgtopo{
-				background:url('http://tedesco.com.br/wp-content/uploads/2017/08/Beira-Rio-01.jpg');
-				height: 600px;
+				background:url('http://www.arquibancadacolorada.com.br/blog/wp-content/uploads/2018/10/daLESSANDRO-1.jpg');
+				height: 800px;
 				background-repeat: no repeat;
 				background-size: 100%;
 				margin-top: 0;
 				position: initial;
 			}
 			#conteudo{
-				height: 400px;
+				height: 2500px;
 				width: 100%px;
 				background-color: #FA5858;
 				margin: 0;
@@ -93,27 +91,12 @@
 				background-color: white;
 				margin-left: 15%;
 				margin-right: 15%;
-				height: 400px;
+				height: 2500px;
 				margin-top: 0px;
 				position: initial;
-				text-align: center;
-				
-			}
-			#noticias2{
-				background-color: white;
-				margin-left: 15%;
-				margin-right: 15%;
-				height: 2320px;
-				margin-top: 0px;
-				position: initial;
-				text-align: center;
 				
 			}
 			#noticias img{
-				width: 500px;
-				margin-top: 50px;
-			}
-			#noticias2 img{
 				width: 500px;
 				margin-top: 50px;
 			}
@@ -139,7 +122,7 @@
 				width: 100%;
 			}
 			#conteudo2{
-				height: 2320px;
+				height: 1320px;
 				width: 100%px;
 				background-color: #FA5858;
 				margin: 0;
@@ -149,7 +132,7 @@
 				background-color: white;
 				margin-left: 15%;
 				margin-right: 15%;
-				height: 2320px;
+				height: 1320px;
 				margin-top: 0px;
 				position: initial;
 				}
@@ -167,7 +150,7 @@
 				height: 320px;
 				margin-top: 0px;
 				position: initial;}
-			footer {
+			.footer {
 				left: 0;
 				bottom: 0;
 				width: 100%;
@@ -175,19 +158,13 @@
 				color: white;
 				text-align: center;
 				height: 100px;
-				position: initial;
 				}
-				table{
-					width: 50px;
-					text-align: center;
-					margin-left: 15%;
-					background-color: grey;
-				}
-				td a{
-					margin-left: 21%;
-				}
-
-				
+			td {
+				text-align: center;
+			}
+			table{
+				margin-left: 10px;
+			}
 		</style>
 	</head>
 	<body>
@@ -207,88 +184,40 @@
 		</section>
 		<section id="conteudo">
 			<div id="noticias">
-						
-					<table border="0">
-						<tr>
-							<td>
-								<img style="width: 300px; height: 180px" src="https://conteudo.cbf.com.br/cdn/thumbs/1440x0/201808/20180815120452_192.jpeg">  
-							</td>
-							<td>
-								<img style="width: 300px; height: 180px" src="https://static-wp-tor15-prd.torcedores.com/wp-content/uploads/2018/12/libertadores.jpg">  
-							</td>
-							<td>
-								<img style="width: 300px; height: 180px" src="https://conteudo.cbf.com.br/cdn/thumbs/1440x0/201808/20180814140348_588.jpeg">  
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<b>Copa do Brasil 2019</b>
-							</td>
-							<td>
-								<b>Libertadores 2019</b>
-							</td>
-							<td>
-								<b>Brasileirão 2019</b>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								
-							</td>
-							<td>
-								
-							</td>
-							<td>
-								
-							</td>
-						</tr>
-						<tr>
-							<td>
-								#FeitosDePaixão
-							</td>
-							<td>
-								#FeitosDePaixão
-							</td>
-							<td>
-								#FeitosDePaixão
-							</td>
-						</tr>
-						<tr>
-							<td>
-								
-							</td>
-							<td>
-								
-							</td>
-							<td>
-								
-							</td>
-						</tr>
-						<tr>
-							<td>
-								
-							</td>
-							<td>
-								
-							</td>
-							<td>
-								
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="copa.php">Comprar</a>
-							</td>
-							<td>
-								<a href="libertadores.php">Comprar</a>
-							</td>
-							<td>
-								<a href="brasileiro.php">Comprar</a>
-							</td>
-						</tr>
-						
-					</table>
-										
+					<?php
+						include_once 'banco.php';
+	
+							$pdo = Banco::conectar();
+								$sql = 'SELECT * FROM ingresso ORDER BY id DESC';
+
+								foreach($pdo->query($sql)as $row)
+								{
+									echo '<table style="text-align: center;background-color:#F8F8FF">';
+									echo '<tr>';
+									echo '<td colspan="3">'. $row['data'] . '</td>';
+									echo '</tr>';
+									echo '<tr>';
+									echo '<td rowspan="2"><img src"'. $row['imagemum'] . '"></td>';
+									echo '<td>X</td>';
+									echo '<td rowspan="2"><img src"'. $row['imagemdois'] . '"></td>';
+									echo '</tr>';
+									echo '<tr>';
+									echo '<td>'. $row['hora'] . '</td>';
+									echo '</tr>';
+									echo '<tr>';
+									echo '<td colspan="3">'. $row['valor'] . '</td>';
+									echo '</tr>';
+									echo '<tr>';
+									echo '<td colspan="3"><a href="#">Comprar</a></td>';
+									echo '</tr>';
+									echo '<table>';
+								}
+								Banco::desconectar();
+		
+?>
+		
+					
+					
 			</div>
 			
 		</section>
@@ -296,8 +225,16 @@
 				<img class="mySlides" src="https://a3.espncdn.com/combiner/i?img=%2Fphoto%2F2017%2F1206%2Fr299193_1296x518_5-2.jpg&w=768&h=307&scale=crop&cquality=80&location=origin&format=jpg">
 				<img class="mySlides" src="https://a1.espncdn.com/combiner/i?img=%2Fphoto%2F2019%2F0824%2Fr587824_1296x518_5-2.jpg&w=768&h=307&scale=crop&cquality=80&location=origin&format=jpg">
 				<img class="mySlides" src="https://a1.espncdn.com/combiner/i?img=%2Fphoto%2F2019%2F0822%2Fr587065_1296x518_5%2D2.jpg&w=768&h=307&scale=crop&cquality=80&location=origin&format=jpg">
-				
 			</div>
+		<section id="conteudo2">
+			<div id="videos">
+				<a href="noticias.html" style="margin-bottom: 20px;">Vídeos</a>
+				<iframe width="100%" height="405" src="https://www.youtube.com/embed/zOLo-Nlpq8E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<iframe width="100%" height="405" src="https://www.youtube.com/embed/--nwR2LiVPc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" style="margin-top: 20px;" allowfullscreen></iframe>
+				<iframe width="100%" height="405" src="https://www.youtube.com/embed/IdlcJVeWcLg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" style="margin-top: 20px; margin-bottom:30px" allowfullscreen></iframe>
+			</div>
+			
+		</section>
 		<section id="conteudo3">
 			<div id="Login">
 				<a href="login" style="margin-bottom:20px;">Login</a>
@@ -305,14 +242,13 @@
 				<form>
 					Nome<input type="text" name="nome">
 					email<input type="email" name="email">
-					<label for="msg">Mensagem:</label>
-					<textarea id="msg"></textarea>
+					mensagem<input type="text" name="mensagem" style="height:150px;">
 				</form>
 			</div>
 		</section>
-			<footer class="footer">
+		<footer class="footer">
 			<p>@Vinnycius Medina</p>
-			</footer>
+		</footer>
 			<script>
 			var myIndex = 0;
 				carousel();
