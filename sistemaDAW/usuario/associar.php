@@ -300,7 +300,7 @@
         $endereco = $_POST['endereco'];
         $telefone = $_POST['telefone'];
         $email = $_POST['email'];
-        $senha = crypt($_POST['senha'], '$2a$07$rasmuslerd...........$');
+        $senha = crypt($_POST['senha'], '$2a$07$usesomesillystringforsalt$');
         $sexo = $_POST['sexo'];
 
         //Validaçao dos campos:

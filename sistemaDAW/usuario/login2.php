@@ -2,7 +2,7 @@
 session_start();
 include('banco.php');
 
-if(empty($_POST['email']) || empty($_POST['senha'])) {
+if(empty($_POST['email']) || crypt($_POST['senha'], '$2a$07$usesomesillystringforsalt$')) {
 	header('Location: index.php');
 	exit();
 }
@@ -10,7 +10,7 @@ if(empty($_POST['email']) || empty($_POST['senha'])) {
 $email = mysqli_real_escape_string($conexao, $_POST['email']);
 $senha = mysqli_real_escape_string($conexao, $_POST['senha']);
 
-$query = "select * from pessoa where email = '{$email}' and senha = crypt('{$senha}', '$6$rounds=5000$usesomesillystringforsalt$')";
+$query = "select * from pessoa where email = '{$email}' and senha = '{$senha}'";
 
 $result = mysqli_query($conexao, $query);
 

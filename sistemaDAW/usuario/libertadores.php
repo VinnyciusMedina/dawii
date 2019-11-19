@@ -184,7 +184,7 @@
 		</section>
 		<section id="conteudo">
 			<div id="noticias">
-					<?php
+				<?php
 						include_once 'banco.php';
 	
 							$pdo = Banco::conectar();
@@ -192,25 +192,26 @@
 
 								foreach($pdo->query($sql)as $row)
 								{
-									echo '<table style="text-align: center;background-color:#F8F8FF">';
+									echo '<table style="width: 100%; text-align: center;background-color:#F8F8FF">';
 									echo '<tr>';
 									echo '<td colspan="3">'. $row['data'] . '</td>';
 									echo '</tr>';
 									echo '<tr>';
-									echo '<td rowspan="2"><img src"'. $row['imagemum'] . '"></td>';
+									echo '<td rowspan="2"><img style="width:100px" src="http://localhost/sistemadaw/adm/ingresso/imagem/'. $row['imagemum'] . '"></td>';
 									echo '<td>X</td>';
-									echo '<td rowspan="2"><img src"'. $row['imagemdois'] . '"></td>';
+									echo '<td rowspan="2"><img style="width:100px" src="http://localhost/sistemadaw/adm/ingresso/imagem/'. $row['imagemdois'] . '"></td>';
 									echo '</tr>';
 									echo '<tr>';
 									echo '<td>'. $row['hora'] . '</td>';
 									echo '</tr>';
 									echo '<tr>';
-									echo '<td colspan="3">'. $row['valor'] . '</td>';
+									echo '<td colspan="3"> R$'. $row['valor'] . ',00</td>';
 									echo '</tr>';
 									echo '<tr>';
 									echo '<td colspan="3"><a href="#">Comprar</a></td>';
 									echo '</tr>';
 									echo '<table>';
+									echo '<hr>';
 								}
 								Banco::desconectar();
 		
