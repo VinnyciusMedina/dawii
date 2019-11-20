@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 12-Nov-2019 às 01:59
+-- Tempo de geração: 20-Nov-2019 às 20:50
 -- Versão do servidor: 10.4.8-MariaDB
 -- versão do PHP: 7.1.33
 
@@ -34,6 +34,13 @@ CREATE TABLE `adm` (
   `senha` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Extraindo dados da tabela `adm`
+--
+
+INSERT INTO `adm` (`id`, `login`, `senha`) VALUES
+(1, 'medina', '123');
+
 -- --------------------------------------------------------
 
 --
@@ -48,8 +55,20 @@ CREATE TABLE `ingresso` (
   `nomeum` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `nomedois` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `imagemum` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `imagemdois` varchar(100) COLLATE utf8_unicode_ci NOT NULL
+  `imagemdois` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `valor` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Extraindo dados da tabela `ingresso`
+--
+
+INSERT INTO `ingresso` (`id`, `descricao`, `data`, `hora`, `nomeum`, `nomedois`, `imagemum`, `imagemdois`, `valor`) VALUES
+(3, 'sadasdasd', '2018-02-02', '02:01:00', 'Internacional', 'gremio', 'download (1).png', 'internacional-porto-alegre-logo-escudo-4 (1).png', 3),
+(4, 'nada', '2019-10-31', '20:58:00', 'Internacional', 'gremio', 'download (1).png', 'download (1).png', 2),
+(5, 'Sacode', '2019-10-21', '21:30:00', 'Flamengo', 'Gremio', 'Clube_de_Regatas_do_Flamengo-logo-4F9152B932-seeklogo.com.png', 'download (1).png', 120),
+(6, 'nada', '2001-03-12', '23:58:00', 'Bahia', 'Inter', 'e-c-bahia-logo-escudo.png', 'download.png', 100),
+(7, 'nada', '2021-11-02', '02:57:00', 'corinthians', 'inter', 'CORINTHIANSlogo.png', 'internacional-porto-alegre-logo-escudo-4 (1).png', 110);
 
 -- --------------------------------------------------------
 
@@ -94,12 +113,10 @@ CREATE TABLE `pessoa` (
 --
 
 INSERT INTO `pessoa` (`id`, `nome`, `endereco`, `telefone`, `email`, `sexo`, `senha`) VALUES
-(2, 'medina', 'Livramento', '21231231', 'eu@gmail.com', 'M', ''),
-(3, 'medina', 'Livramento', '21231231', 'eu@gmail.com', 'M', ''),
-(4, 'medina2', 'Livramento', '123456789', 'medina@gmail.com', 'M', ''),
-(5, 'medina2', 'Livramento', '123456789', 'medina@gmail.com', 'M', ''),
-(6, 'medina', 'Livramento', '21231231', 'naosei@gmail.com', 'M', ''),
-(7, 'medina', 'Livramento', '21231231', 'naosei@gmail.com', 'M', '$2a$07$rasmuslerd............S6jQNtqIuIq7htpvuV5beudsPwKNqYy');
+(7, 'medina', 'Livramento', '21231231', 'naosei@gmail.com', 'M', '$2a$07$rasmuslerd............S6jQNtqIuIq7htpvuV5beudsPwKNqYy'),
+(8, 'medina', 'Cidade', '123', 'nada@gmail.com', 'M', '$2a$07$rasmuslerd............lsU3bqSRXXzbqIHP2V29SZhRIIbRLHC'),
+(10, 'rex', 'Livramento', '123', 'a@gmail.com', 'M', '$2a$07$rasmuslerd............Cj1cPbAc0PU7pGYno1SZgEqq.i0y4ry'),
+(11, 'asdasd', 'Livramento', '21231231', 'b@gmail.com', 'M', '$2a$07$rasmuslerd............S6jQNtqIuIq7htpvuV5beudsPwKNqYy');
 
 --
 -- Índices para tabelas despejadas
@@ -137,13 +154,13 @@ ALTER TABLE `pessoa`
 -- AUTO_INCREMENT de tabela `adm`
 --
 ALTER TABLE `adm`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `ingresso`
 --
 ALTER TABLE `ingresso`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de tabela `noticia`
@@ -155,7 +172,7 @@ ALTER TABLE `noticia`
 -- AUTO_INCREMENT de tabela `pessoa`
 --
 ALTER TABLE `pessoa`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
