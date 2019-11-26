@@ -47,7 +47,7 @@
                             echo '<td>'. $row['telefone'] . '</td>';
                             echo '<td>'. $row['email'] . '</td>';
                             echo '<td>'. $row['sexo'] . '</td>';
-                            echo '<td>'. crypt($row['senha'], '$2a$07$rasmuslerd...........$') . '</td>';
+                            echo '<td>'. $row['senha']. '</td>';
                             echo '<td width=250>';
                             echo '<a class="btn btn-primary" href="read.php?id='.$row['id'].'">Info</a>';
                             echo ' ';
