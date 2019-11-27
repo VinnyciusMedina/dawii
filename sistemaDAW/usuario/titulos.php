@@ -165,6 +165,9 @@
 			table{
 				margin-left: 200px;
 			}
+			a img{
+					width: 25px;
+				}
 		</style>
 	</head>
 	<body>
@@ -178,6 +181,7 @@
 			<li><a href="titulos.php">Titulos</a></li>
 			<li><a href="associar.php">Associar</a></li>
 			<li><a href="login.php">Login</a></li>
+			<li><a href="carrinho.php"><img src="carrinho.png"></a></li>
 		</ul>
 		</div>
 		<section id="imgtopo">

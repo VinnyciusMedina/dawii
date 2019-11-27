@@ -203,7 +203,9 @@ session_start();
 					color: red;
 					margin-top: 300px;
 				}
-				
+				a img{
+					width: 25px;
+				}
 		</style>
 	</head>
 	<body>
@@ -217,6 +219,7 @@ session_start();
 			<li><a href="titulos.php">Titulos</a></li>
 			<li><a href="associar.php">Associar</a></li>
 			<li><a href="login.php">Login</a></li>
+			<li><a href="carrinho.php"><img src="carrinho.png"></a></li>
 		</ul>
 		</div>
 		<section id="imgtopo">

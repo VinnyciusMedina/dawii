@@ -187,16 +187,21 @@
 		</section>
 		<section id="conteudo">
 			<div id="noticias">
-					<a href="noticias.html">Noticias</a>
-					<img src="https://s2.glbimg.com/qvmG9BLXlD_kZC8VOpTwMUtEa60=/540x304/top/smart/http://s.glbimg.com/es/ge/f/original/2019/08/22/cueara.jpg">
-					<h2 style="color: red">Após derrota para o Flamengo, Inter retorna a Porto Alegre para retomar Brasileirão</h2>
-					<hr>
-					<img src="https://s2.glbimg.com/nyrqZrF4mZZR48cH68ErACHRoMo=/540x304/top/smart/http://s.glbimg.com/es/ge/f/original/2019/08/24/int2.jpg">
-					<h2 style="color: red">Nonato minimiza disputa e afina parceria com Bruno Silva: “Tem qualidade”</h2>
-					<hr>
-					<img src="https://s2.glbimg.com/nyrqZrF4mZZR48cH68ErACHRoMo=/540x304/top/smart/http://s.glbimg.com/es/ge/f/original/2019/08/24/int2.jpg">
-					<h2 style="color: red; margin-bottom: 20px;">Inter freia ansiedade para decisão com Fla e busca “moral” com 2ª vitória fora pelo Brasileirão</h2>
-					<hr>
+								<a href="noticias.html">Noticias</a>
+					<?php
+						include_once 'banco.php';
+	
+							$pdo = Banco::conectar();
+								$sql = 'SELECT * FROM noticia ORDER BY id DESC';
+
+								foreach($pdo->query($sql)as $row)
+								{
+									echo '<img src="http://localhost/sistemadaw/adm/noticia/imagem/'.$row['imagem'].'">';
+									echo '<h2 style="color: red">'.$row['descricao'].'<h2>';
+									echo '<hr>';
+								}
+								
+								?>
 					
 					
 			</div>
@@ -208,18 +213,22 @@
 				<img class="mySlides" src="https://a1.espncdn.com/combiner/i?img=%2Fphoto%2F2019%2F0822%2Fr587065_1296x518_5%2D2.jpg&w=768&h=307&scale=crop&cquality=80&location=origin&format=jpg">
 			</div>
 		<section id="conteudo2">
+			
 			<div id="noticias2">
-					<a href="noticias.html" style="margin-bottom: 10px;" >Noticias</a>
-					<img src="https://s2.glbimg.com/r6azDdv_Fh2hAN3FavUrewV5nn4=/0x30:5568x3165/540x304/smart/http://s2.glbimg.com/kGGQcrra_UgfmQr_GjrQtx7VwPI=/0x0:5568x3712/5568x3712/s.glbimg.com/es/ge/f/original/2019/08/26/48626851422_bd948294fa_o.jpg">
-					<h2 style="color: red">Guerrero divide missão de fazer gols contra o Flamengo</h2>
-					<hr>
-					<img src="https://s2.glbimg.com/jW53laYtsh2sTMw7d1AEXodO-2s=/0x0:1400x800/540x304/smart/http://i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2019/b/Z/LmsVTMTLeJe59FTDigxQ/renato-odair.jpg">
-					<h2 style="color: red">Em enquete, torcida acredita que Grêmio tem mais chances que o Inter na Libertadores</h2>
-					<hr>
-					<img src="https://s2.glbimg.com/5KYK7SdzA_g5TUEs4ehHuc5tvYE=/0x0:2048x1365/540x304/smart/http://s.glbimg.com/es/ge/f/original/2019/08/01/48427164777_625fa9ee70_k.jpg">
-					<h2 style="color: red; margin-bottom: 20px;">
-Como o Inter se prepara para fazer "jogo da vida" contra o Flamengo</h2>
-					<hr>
+					<?php
+						include_once 'banco.php';
+	
+							$pdo = Banco::conectar();
+								$sql = 'SELECT * FROM noticia ORDER BY id DESC';
+
+								foreach($pdo->query($sql)as $row)
+								{
+									echo '<img src="http://localhost/sistemadaw/adm/noticia/imagem/'.$row['imagem'].'">';
+									echo '<h2 style="color: red">'.$row['descricao'].'<h2>';
+									echo '<hr>';
+								}
+								
+								?>
 			</div>
 			
 		</section>

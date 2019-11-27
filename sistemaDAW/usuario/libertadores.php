@@ -165,6 +165,9 @@
 			table{
 				margin-left: 10px;
 			}
+			a img{
+					width: 25px;
+				}
 		</style>
 	</head>
 	<body>
@@ -178,6 +181,7 @@
 			<li><a href="titulos.php">Titulos</a></li>
 			<li><a href="associar.php">Associar</a></li>
 			<li><a href="login.php">Login</a></li>
+			<li><a href="carrinho.php"><img src="carrinho.png"></a></li>
 		</ul>
 		</div>
 		<section id="imgtopo">
@@ -205,10 +209,10 @@
 									echo '<td>'. $row['hora'] . '</td>';
 									echo '</tr>';
 									echo '<tr>';
-									echo '<td colspan="3"> R$'. $row['valor'] . ',00</td>';
+									echo '<td colspan="3"> R$'. number_format($row['valor'],2,",","."). '</td>';
 									echo '</tr>';
 									echo '<tr>';
-									echo '<td colspan="3"><a href="#">Comprar</a></td>';
+									echo '<td colspan="3"><a href="carrinho.php?add=carrinho$id='.$row['id'].'">Adicionar Ao carrinho</a></td>';
 									echo '</tr>';
 									echo '<table>';
 									echo '<hr>';
