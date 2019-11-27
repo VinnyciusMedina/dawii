@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 20-Nov-2019 às 20:50
+-- Tempo de geração: 27-Nov-2019 às 21:45
 -- Versão do servidor: 10.4.8-MariaDB
 -- versão do PHP: 7.1.33
 
@@ -90,7 +90,9 @@ CREATE TABLE `noticia` (
 --
 
 INSERT INTO `noticia` (`id`, `nome`, `descricao`, `imagem`, `data`, `autor`) VALUES
-(2, 'DASD', 'sad', 'oi.jpg', '2017-05-03', 'eu');
+(3, 'Noticia 1', 'Pottker sofre nova lesÃ£o muscular e nÃ£o joga mais pelo Inter em 2019', 'eklhtdbx0aajfnv_APQnlnw.jpg', '2022-03-02', 'Medina'),
+(4, 'Noticia 2', ' ZÃ© Ricardo fecha treino para definir substitutos de Lindoso e Pottker', 'img-0820.jpg', '2021-03-29', 'Medina'),
+(5, 'Noticia 3', 'D\'Ale fala sobre renovaÃ§Ã£o, amizade com Coudet e cidadania brasileira', 'dale6_tn3xaRv.jpg', '2021-03-28', 'Medina');
 
 -- --------------------------------------------------------
 
@@ -116,7 +118,9 @@ INSERT INTO `pessoa` (`id`, `nome`, `endereco`, `telefone`, `email`, `sexo`, `se
 (7, 'medina', 'Livramento', '21231231', 'naosei@gmail.com', 'M', '$2a$07$rasmuslerd............S6jQNtqIuIq7htpvuV5beudsPwKNqYy'),
 (8, 'medina', 'Cidade', '123', 'nada@gmail.com', 'M', '$2a$07$rasmuslerd............lsU3bqSRXXzbqIHP2V29SZhRIIbRLHC'),
 (10, 'rex', 'Livramento', '123', 'a@gmail.com', 'M', '$2a$07$rasmuslerd............Cj1cPbAc0PU7pGYno1SZgEqq.i0y4ry'),
-(11, 'asdasd', 'Livramento', '21231231', 'b@gmail.com', 'M', '$2a$07$rasmuslerd............S6jQNtqIuIq7htpvuV5beudsPwKNqYy');
+(11, 'asdasd', 'Livramento', '21231231', 'b@gmail.com', 'M', '$2a$07$rasmuslerd............S6jQNtqIuIq7htpvuV5beudsPwKNqYy'),
+(12, 'medina', 'Livramento', '123123', 'c@gmail.com', 'M', '$2a$07$rasmuslerd............EhoXa7h9d0HPrKNo50vW.Z4jrVA0Pfa'),
+(13, 'medina', 'dfs', '123123', 'd@gmail.com', 'M', '$2a$07$rasmuslerd............A.LxSorFYUTQaifBRhRbvq3UbPUQUoi');
 
 --
 -- Índices para tabelas despejadas
@@ -166,13 +170,13 @@ ALTER TABLE `ingresso`
 -- AUTO_INCREMENT de tabela `noticia`
 --
 ALTER TABLE `noticia`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `pessoa`
 --
 ALTER TABLE `pessoa`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
